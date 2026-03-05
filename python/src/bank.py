@@ -12,14 +12,18 @@ class Bank:
     @staticmethod
     def create(currency1: Currency, currency2: Currency, rate: float) -> "Bank":
         bank = Bank({})
-        bank.addEchangeRate(currency1, currency2, rate)
+        bank.add_echange_rate(currency1, currency2, rate)
 
         return bank
-    
-    def addEchangeRate(self, currency1: Currency, currency2: Currency, rate: float) -> None:
-        self._exchange_rate[f'{currency1.value}->{currency2.value}'] = rate
 
-    def convert(self, amount: float, currency1: Currency, currency2: Currency) -> float:
-        if not (currency1.value == currency2.value or f'{currency1.value}->{currency2.value}' in self._exchange_rate):
-            raise MissingExchangeRateError(currency1, currency2)
-        return amount if currency1.value == currency2.value  else amount * self._exchange_rate[f'{currency1.value}->{currency2.value}']
+    def add_echange_rate(self, c1: Currency, c2: Currency, rate: float) -> None:
+
+        self._exchange_rate[f"{c1.value}->{c2.value}"] = rate
+
+    def convert(self, amount: float, cur_origin: Currency, cur_target: Currency) -> float:
+        if f"{cur_origin.value}->{cur_target.value}" in self._exchange_rate:
+           return amount * self._exchange_rate[f"{cur_origin.value}->{cur_target.value}"]
+        if cur_origin.value == cur_target.value:
+            return amount
+        raise MissingExchangeRateError(cur_origin, cur_target)
+

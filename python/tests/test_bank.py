@@ -16,12 +16,12 @@ class TestBank:
     def test_convert_with_missing_exchange_rate_throws_exception(self):
         with pytest.raises(MissingExchangeRateError) as error:
             Bank.create(Currency.EUR, Currency.USD, 1.2).convert(10, Currency.EUR, Currency.KRW)
-        
         assert str(error.value) == "EUR->KRW"
 
     def test_convert_with_different_exchange_rate_returns_different_floats(self):
         bank: Bank = Bank.create(Currency.EUR, Currency.USD, 1.2)
         assert bank.convert(10, Currency.EUR, Currency.USD) == 12
 
-        bank.addEchangeRate(Currency.EUR, Currency.USD, 1.3)
+        bank.add_echange_rate(Currency.EUR, Currency.USD, 1.3)
         assert bank.convert(10, Currency.EUR, Currency.USD) == 13
+

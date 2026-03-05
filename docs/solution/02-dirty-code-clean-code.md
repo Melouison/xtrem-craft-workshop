@@ -14,7 +14,7 @@
 
 - code lisible / simple / explicite
 - facile a modifier 
-- on evite la dette technique 
+- on evite la dette technique   
 - bonne structure general du code 
 - gestion de packages / modules 
 - des commentaires utiles et à jour 
