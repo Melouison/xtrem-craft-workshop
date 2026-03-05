@@ -1,0 +1,35 @@
+{
+    "tests_by_mangled_function_name": {
+        "bank.bank.x\u01c1Bank\u01c1__init__": [
+            "tests/test_bank.py::TestBank::test_should_not_convert_between_different_currencies_when_exchange_rate_is_missing",
+            "tests/test_bank.py::TestBank::test_should_return_same_value_when_converting_currency_to_itself",
+            "tests/test_bank.py::TestBank::test_should_returns_differents_floats_whenconverintngf_different_exchange_rate",
+            "tests/test_bank.py::TestBank::test_should_return_float_when_convertng_euro_to_usd"
+        ],
+        "bank.bank.x\u01c1Bank\u01c1add_echange_rate": [
+            "tests/test_bank.py::TestBank::test_should_not_convert_between_different_currencies_when_exchange_rate_is_missing",
+            "tests/test_bank.py::TestBank::test_should_return_same_value_when_converting_currency_to_itself",
+            "tests/test_bank.py::TestBank::test_should_returns_differents_floats_whenconverintngf_different_exchange_rate",
+            "tests/test_bank.py::TestBank::test_should_return_float_when_convertng_euro_to_usd"
+        ],
+        "bank.bank.x\u01c1Bank\u01c1convert": [
+            "tests/test_bank.py::TestBank::test_should_not_convert_between_different_currencies_when_exchange_rate_is_missing",
+            "tests/test_bank.py::TestBank::test_should_return_same_value_when_converting_currency_to_itself",
+            "tests/test_bank.py::TestBank::test_should_returns_differents_floats_whenconverintngf_different_exchange_rate",
+            "tests/test_bank.py::TestBank::test_should_return_float_when_convertng_euro_to_usd"
+        ],
+        "bank.missing_exchange_rate_error.x\u01c1MissingExchangeRateError\u01c1__init__": [
+            "tests/test_bank.py::TestBank::test_should_not_convert_between_different_currencies_when_exchange_rate_is_missing"
+        ]
+    },
+    "duration_by_test": {
+        "tests/test_bank.py::TestBank::test_should_return_float_when_convertng_euro_to_usd": 0.0006224510000265582,
+        "tests/test_bank.py::TestBank::test_should_return_same_value_when_converting_currency_to_itself": 0.0003682760000174312,
+        "tests/test_bank.py::TestBank::test_should_not_convert_between_different_currencies_when_exchange_rate_is_missing": 0.00034265099998265214,
+        "tests/test_bank.py::TestBank::test_should_returns_differents_floats_whenconverintngf_different_exchange_rate": 0.0003051570001844084,
+        "tests/test_money.py::TestMoney::test_add_in_usd_returns_value": 0.0003063320000364911,
+        "tests/test_money.py::TestMoney::test_multiply_in_euros_returns_positive_number": 0.00028143299994098925,
+        "tests/test_money.py::TestMoney::test_divide_in_korean_won_returns_float": 0.00030101100003321335
+    },
+    "stats_time": 0.31066342199999997
+}
