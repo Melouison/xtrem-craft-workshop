@@ -1,0 +1,19 @@
+name: Example
+
+jobs:
+  uv-example:
+    name: python
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: "Set up Python"
+        uses: uv run task requirements
+        with:
+          python-version-file: "pyproject.toml"
+      - name: "Run tests"
+        uses: uv run task test
+
+
