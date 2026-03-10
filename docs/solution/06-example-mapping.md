@@ -19,6 +19,6 @@ Vous pouvez également joindre une photo du résultat obtenu en utilisant les po
 
 ## Évaluation d'un portefeuille
 
-
+![alt text](image.png)
 
 
