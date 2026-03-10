@@ -7,3 +7,5 @@ Individuellement, donnez les 3 idées les plus importantes sur le TDD et une que
 ## Mob programming
 
 > Qu'avez-vous appris de l'introduction de nouveaux rôles en mob programming ?
+
+oui

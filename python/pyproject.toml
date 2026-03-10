@@ -113,4 +113,4 @@ requirements = { cmd = "uv pip compile pyproject.toml --no-deps --no-annotate -o
 paths_to_mutate = ["bank/"]
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+testpaths = ["tests"]
