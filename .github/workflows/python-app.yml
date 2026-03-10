@@ -21,8 +21,10 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: "Set up Python"
-        uses: uv run task requirements
+        uses: actions/setup-python@v4
         with:
           python-version-file: "pyproject.toml"
+      - name: "Install dependencies"
+        run: uv run task requirements
       - name: "Run tests"
-        uses: uv run task test
+        run: uv run task test
