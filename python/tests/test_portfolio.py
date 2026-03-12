@@ -1,7 +1,7 @@
 import pytest
-from bank.currency import Currency
-from .portfolio import Portfolio
-from bank.money import Money 
+from xterm_craft_workshop.currency import Currency
+from xterm_craft_workshop.portfolio import Portfolio
+from xterm_craft_workshop.money import Money 
 
 class TestPortfolio:
     portfolioe = Portfolio()

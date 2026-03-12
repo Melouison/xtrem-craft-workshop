@@ -1,14 +1,12 @@
 import pytest
-import re
-
-from bank.bank import Bank
-from bank.currency import Currency
-from bank.missing_exchange_rate_error import MissingExchangeRateError
-from bank.money import Money
+from xterm_craft_workshop.bank import Bank
+from xterm_craft_workshop.currency import Currency
+from xterm_craft_workshop.missing_exchange_rate_error import MissingExchangeRateError
+from xterm_craft_workshop.money import Money
 
 
 class TestBank:
-    def test_should_return_float_when_convertng_euro_to_usd(self):
+    def test_should_convert_between_different_currencies_when_exchange_rate_is_provided(self):
         assert Bank.create(Currency.EUR, Currency.USD, 1.2).convert(10, Currency.EUR, Currency.USD) == 12
 
     def test_should_return_same_value_when_converting_currency_to_itself(self):

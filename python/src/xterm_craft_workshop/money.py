@@ -1,4 +1,4 @@
-from bank.currency import Currency
+from xterm_craft_workshop.currency import Currency
 
 
 class Money:

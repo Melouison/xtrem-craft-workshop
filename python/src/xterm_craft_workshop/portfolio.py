@@ -1,6 +1,6 @@
-import bank
-from bank.bank import Bank
-from ..bank.money import Money
+import xterm_craft_workshop
+from xterm_craft_workshop.bank import Bank
+from .money import Money
 
 
 class Portfolio:
