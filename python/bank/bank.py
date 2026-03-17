@@ -27,3 +27,10 @@ class Bank:
             return amount
         raise MissingExchangeRateError(cur_origin, cur_target)
 
+    def convert_money(self, money, target_currency):
+        if f"{money.currency.value}->{target_currency.value}" in self._exchange_rate:
+            return money.amount * self._exchange_rate[f"{money.currency.value}->{target_currency.value}"]
+        if money.currency.value == target_currency.value:
+            return money.amount
+        raise MissingExchangeRateError(money.currency, target_currency)
+        

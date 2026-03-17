@@ -4,6 +4,7 @@ import re
 from bank.bank import Bank
 from bank.currency import Currency
 from bank.missing_exchange_rate_error import MissingExchangeRateError
+from bank.money import Money
 
 
 class TestBank:
@@ -25,3 +26,8 @@ class TestBank:
         bank.add_echange_rate(Currency.EUR, Currency.USD, 1.3)
         assert bank.convert(10, Currency.EUR, Currency.USD) == 13
 
+    def test_converter_money(self):
+        bank: Bank = Bank.create(Currency.EUR, Currency.USD, 1.2)
+        money = Money(10, Currency.EUR)
+        assert bank.convert_money(money, Currency.USD) == 12
+        

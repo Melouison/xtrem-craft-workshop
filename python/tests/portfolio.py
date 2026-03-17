@@ -1,26 +1,21 @@
+import bank
 from bank.bank import Bank
+from ..bank.money import Money
 
 
-class portfolio:
+class Portfolio:
     def __init__(self):
-        self.currencies = []
+        self.monies = []
         self.bank = Bank()
 
     def reset(self):
-        self.currencies = []
+        self.monies = []
 
-    def add(self, amount, currency):
-        self.currencies.append((amount, currency))
+    def add(self, money):
+        self.monies.append(money)
 
     def evaluate(self, target_currency):
         total = 0
-        for amount, currency in self.currencies:
-            if currency == target_currency:
-                total += amount
-            else:
-                total += self.convert(amount, currency, target_currency)
+        for money in self.monies:
+            total += self.bank.convert_money(money, target_currency)
         return total
-
-    def convert(self, amount, from_currency, to_currency):
-
-        return self.bank.convert(amount, from_currency, to_currency)
