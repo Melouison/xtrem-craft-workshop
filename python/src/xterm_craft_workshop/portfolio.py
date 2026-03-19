@@ -1,15 +1,17 @@
-import xterm_craft_workshop
 from xterm_craft_workshop.bank import Bank
+
 from .money import Money
 
 
 class Portfolio:
-    def __init__(self):
+    def __init__(self, pivot):
         self.monies = []
-        self.bank = Bank()
+        self.bank = Bank(pivot)
 
-    def reset(self):
+    def reset(self,pivot):
         self.monies = []
+        self.bank = Bank(pivot)
+
 
     def add(self, money):
         self.monies.append(money)
