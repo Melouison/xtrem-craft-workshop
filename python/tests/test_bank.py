@@ -92,3 +92,11 @@ class TestBank:
         result = bank.convert(100,Currency.USD,Currency.EUR)
         assert result == 90
 
+    """ Test avec taux de change négatif """
+    def test_convert_exchange_rate_negative(self):
+        with pytest.raises(ValueError):
+            bank = (bankBuilder.a_bankbuilder()
+                        .with_money_pivot(Currency.USD)
+                        .with_exchange_rate(Currency.EUR, -0.9)
+                        .build())
+            

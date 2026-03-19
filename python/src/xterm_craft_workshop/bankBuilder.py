@@ -16,7 +16,9 @@ class bankBuilder:
         return bankBuilder()
 
     def with_exchange_rate(self, currency : Currency, rate : float ):
-        key = f"{self.pivot.value}->{currency.value}" 
+        if (rate <= 0):
+            raise ValueError("Rate must be positive")
+        key = f"{self.pivot.value}->{currency.value}"
         self._exchange_rate[key] = rate
         return self
 

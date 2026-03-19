@@ -22,7 +22,8 @@ class Bank:
         return bank
 
     def add_echange_rate(self, c2: Currency, rate: float) -> None:
-
+        if (rate <= 0):
+            raise ValueError("Rate must be positive")
         self._exchange_rate[f"{self.pivot.value}->{c2.value}"] = rate
 
     def convert(self, amount: float, cur_origin: Currency, cur_target: Currency) -> float:
