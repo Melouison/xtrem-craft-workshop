@@ -22,11 +22,11 @@ class bankBuilder:
         self._exchange_rate[key] = rate
         return self
 
-    def with_not_money_pivot(self):
+    def with_not_currency_pivot(self):
         self.pivot = None
         return self
 
-    def with_money_pivot(self, currency : Currency):
+    def with_currency_pivot(self, currency : Currency):
         self.pivot = currency
         return self
 
